@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaDownload, FaExclamationCircle } from 'react-icons/fa';
 import { client, urlFor } from '@/lib/sanityClient';
+import { BookChapter } from '@/lib/types';
 import Footer from '../components/Footer';
 
 async function getBookChapters() {
@@ -32,7 +33,7 @@ export default async function BookChapterPage() {
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             {bookChapters && bookChapters.length > 0 ? (
                 <div className="space-y-12">
-                {bookChapters.map((chapter: any) => (
+                {bookChapters.map((chapter: BookChapter) => (
                     <article 
                     key={chapter._id}
                     className="group bg-white p-6 sm:p-8 rounded-xl border hover:border-yellow-700 hover:border-yellow-700/70 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row gap-8"

@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Dropdown from './Dropdown';
 import Image from 'next/image';
-import { isExternal } from 'util/types';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

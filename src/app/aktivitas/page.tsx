@@ -1,6 +1,7 @@
 import ActivityCard from '@/app/components/ActivityCard';
 import { client, urlFor } from '@/lib/sanityClient';
 import Image from 'next/image';
+import { Activity } from '@/lib/types';
 import Footer from '../components/Footer';
 
 async function getActivities() {
@@ -30,7 +31,7 @@ export default async function AktivitasPage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 {activities && activities.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {activities.map((item: any) => (
+                    {activities.map((item: Activity) => (
                     <ActivityCard
                         key={item._id}
                         imageSrc={item.mainImage ? urlFor(item.mainImage).url() : '/images/placeholder.jpg'} // Fallback image

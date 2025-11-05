@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FaDownload, FaCalendarAlt, FaFilePdf, FaExclamationCircle } from 'react-icons/fa';
 import { client } from '@/lib/sanityClient';
 import Image from 'next/image';
+import { Proceedings } from '@/lib/types';
 import Footer from '../components/Footer';
 
 async function getProceedings() {
@@ -32,7 +33,7 @@ export default async function ProceedingsPage() {
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 {proceedingsList && proceedingsList.length > 0 ? (
                     <div className="space-y-12">
-                    {proceedingsList.map((proceeding: any) => (
+                    {proceedingsList.map((proceeding: Proceedings) => (
                         <article 
                             key={proceeding._id} 
                             className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col sm:flex-row items-start gap-8"

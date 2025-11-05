@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaBookOpen, FaGlobeAsia, FaBalanceScale, FaPaintBrush, FaSeedling, FaDownload } from 'react-icons/fa';
-import AnimateOnScroll from '../components/AnimateOnScroll';
 import Footer from '../components/Footer';
 
 const missionItems = [

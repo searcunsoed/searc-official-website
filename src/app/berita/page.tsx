@@ -1,6 +1,7 @@
 import NewsCardPage from '../components/NewsCardPage';
 import { client, urlFor } from '@/lib/sanityClient';
 import Image from 'next/image';
+import { News } from '@/lib/types';
 import Footer from '../components/Footer';
 
 async function getNews() {
@@ -31,7 +32,7 @@ export default async function BeritaPage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 {newsList && newsList.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {newsList.map((item: any) => (
+                    {newsList.map((item: News) => (
                         <NewsCardPage
                             key={item._id}
                             href={`/berita/${item.slug?.current || item._id}`}
