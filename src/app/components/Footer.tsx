@@ -6,16 +6,15 @@ import { FaMedium, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const socialLinks = [
   { href: '#', icon: <FaMedium /> },
-  { href: '#', icon: <FaInstagram /> },
+  { href: 'https://www.instagram.com/searc.unsoed', icon: <FaInstagram /> },
   { href: '#', icon: <FaLinkedinIn /> },
 ];
 
 const importantLinks = [
     { href: 'https://unsoed.ac.id/', label: 'Universitas Jenderal Soedirman' },
-    { href: 'https://fisip.unsoed.ac.id/', label: 'Fakultas Ilmu Sosial dan Ilmu Politik Unsoed' },
-    { href: 'https://hi.fisip.unsoed.ac.id/', label: 'Jurusan Hubungan Internasional Unsoed' },
+    { href: 'https://bima.kemdiktisaintek.go.id/', label: 'BIMA Kemdiktisaintek' },
     { href: 'https://lppm.unsoed.ac.id/', label: 'Lembaga Penelitian dan Pengabdian Masyarakat Unsoed' },
-    { href: 'https://iro.unsoed.ac.id/', label: 'Unsoed International Relations Office' },
+    { href: 'https://sinelitabmas.unsoed.ac.id/', label: 'Sinelitabmas Unsoed' },
 ];
 
 export default function Footer() {
@@ -87,8 +86,6 @@ export default function Footer() {
               className="h-auto"
             />
           </div>
-
-          {/* Copyright */}
           <p className="text-sm text-white">Copyright © {new Date().getFullYear()} - Southeast Asia Strategic Policies Research Center</p>
         </div>
       </div>
