@@ -15,6 +15,7 @@ export default defineType({
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
         {title: 'Quote', value: 'blockquote'},
+        {title: 'LineBreaks', value: 'br'},
       ],
       lists: [
         {title: 'Bullet', value: 'bullet'},
