@@ -4,6 +4,13 @@ import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import Footer from '@/app/components/Footer';
 
+interface AuthorImage {
+  asset: {
+    _ref: string;
+    _type: 'reference';
+  };
+}
+
 async function getArticleDetail(slug: string) {
     const query = `*[_type == "article" && slug.current == $slug][0] {
         _id,
@@ -48,7 +55,7 @@ export default async function ArticleDetailPage({ params }: { params: { kategori
                         </h1>
                         <div className="mt-6 flex flex-col items-center justify-center text-sm text-gray-500 gap-2">
                             <div className="flex -space-x-2 overflow-hidden">
-                                {article.authorImages && article.authorImages.map((img: any, index: number) => (
+                                {article.authorImages && article.authorImages.map((img: AuthorImage, index: number) => (
                                     img && (
                                         <div key={index} className="relative w-10 h-10 rounded-full border-2 border-white overflow-hidden">
                                             <Image
