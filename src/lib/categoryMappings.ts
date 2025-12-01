@@ -13,6 +13,6 @@ export const categoryMappings: Record<string, { pageTitle: string; sanityCategor
   },
   'politics-ir': {
     pageTitle: 'Politics and International Relations Research',
-    sanityCategory: 'Politics and International Relations Research',
+    sanityCategory: 'Politics and International Relations',
   },
 };

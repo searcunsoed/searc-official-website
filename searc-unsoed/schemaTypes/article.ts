@@ -26,7 +26,7 @@ export default defineType({
         list: [
           {title: 'Economic and Social Warfare', value: 'Economic and Social Warfare'},
           {title: 'Law and Human Rights', value: 'Law and Human Rights'},
-          {title: 'Politics and International Relations Research', value: 'Politics and International Relations Research'},
+          {title: 'Politics and International Relations', value: 'Politics and International Relations'},
           {title: 'Culture and Linguistics', value: 'Culture and Linguistics'},
         ],
       },
