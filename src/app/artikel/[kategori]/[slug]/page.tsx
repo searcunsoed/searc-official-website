@@ -12,7 +12,8 @@ async function getArticleDetail(slug: string) {
         publishedAt,
         mainImage,
         excerpt,
-        authorNames,
+        "authorNames": author[]->name,
+        "authorImages": author[]->profileImage,
         body
     }`;
     const params = { slug: slug };
@@ -45,21 +46,31 @@ export default async function ArticleDetailPage({ params }: { params: { kategori
                         <h1 className="mt-2 text-3xl font-extrabold font-sans text-gray-900 sm:text-4xl md:text-5xl">
                             {article.title || 'Judul Tidak Tersedia'}
                         </h1>
-                        <div className="mt-6 flex items-center justify-center space-x-4 text-sm text-gray-500">
-                            {article.authorImage && (
-                                <Image
-                                src={urlFor(article.authorImage).width(40).height(40).url()}
-                                alt={article.authorName || 'Penulis'}
-                                width={40}
-                                height={40}
-                                className="rounded-full"
-                                />
-                            )}
-                            <span>Oleh {article.authorNames || 'Penulis Tidak Diketahui'}</span>
-                            <span>•</span>
-                            <time dateTime={article.publishedAt}>
-                                {article.publishedAt ? new Date(article.publishedAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Tanggal tidak tersedia'}
-                            </time>
+                        <div className="mt-6 flex flex-col items-center justify-center text-sm text-gray-500 gap-2">
+                            <div className="flex -space-x-2 overflow-hidden">
+                                {article.authorImages && article.authorImages.map((img: any, index: number) => (
+                                    img && (
+                                        <div key={index} className="relative w-10 h-10 rounded-full border-2 border-white overflow-hidden">
+                                            <Image
+                                                src={urlFor(img).width(40).height(40).url()}
+                                                alt="Penulis"
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                    )
+                                ))}
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <span>Oleh</span>
+                                <span className="font-medium text-gray-700">
+                                    {article.authorNames ? article.authorNames.join(', ') : 'Penulis Tidak Diketahui'}
+                                </span>
+                                <span>•</span>
+                                <time dateTime={article.publishedAt}>
+                                    {article.publishedAt ? new Date(article.publishedAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Tanggal tidak tersedia'}
+                                </time>
+                            </div>
                         </div>
                     </header>
                 {article.mainImage && (
