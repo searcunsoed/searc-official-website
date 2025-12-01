@@ -12,8 +12,7 @@ async function getArticleDetail(slug: string) {
         publishedAt,
         mainImage,
         excerpt,
-        "authorNames": author->name,
-        "authorImage": author->profileImage,
+        authorNames,
         body
     }`;
     const params = { slug: slug };
@@ -50,7 +49,7 @@ export default async function ArticleDetailPage({ params }: { params: { kategori
                             {article.authorImage && (
                                 <Image
                                 src={urlFor(article.authorImage).width(40).height(40).url()}
-                                alt={article.authorNames || 'Penulis'}
+                                alt={article.authorName || 'Penulis'}
                                 width={40}
                                 height={40}
                                 className="rounded-full"
