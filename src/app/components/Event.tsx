@@ -6,7 +6,13 @@ interface Event {
     _id: string;
     title: string;
     slug: { current: string };
-    poster: any;
+    poster: {
+        _type: 'image';
+        asset: {
+            _ref: string;
+            _type: 'reference';
+        };
+    };
     startDate: string;
     location: string;
     registrationLink?: string;
