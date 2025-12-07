@@ -1,6 +1,7 @@
 import HeroImage from "./components/HeroImage";
 import Quote from "./components/Quote";
 import OverviewSection from "./components/OverviewSection";
+import EventPage from "./components/Event";
 import LatestArticlesSection from "./components/LatestArticlesSection";
 import NewsSection from "./components/NewsSection";
 import InstagramSection from "./components/InstagramSection";
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroImage />
       <Quote />
       <OverviewSection />
+      <EventPage />
       <LatestArticlesSection />
       <NewsSection />
       <InstagramSection />

@@ -5,6 +5,7 @@ import researcher from './researcher'
 import news from './news'
 import blockContent from './blockContent'
 import activity from './activity'
+import event from './event'
 
 export const schemaTypes = [
     bookChapter,
@@ -14,4 +15,5 @@ export const schemaTypes = [
     news,
     blockContent,
     activity,
+    event,
 ]
