@@ -31,7 +31,7 @@ export default function ArticleCard({ href, imageSrc, category, date, author, ti
                 {category}
             </p>
             <Link href={href} className="mt-2 block" target="_blank">
-                <h3 className="text-xl font-bold font-sans text-grey-900 group-hover:text-yellow-700 transition-colors">
+                <h3 className="text-xl font-bold font-sans text-grey-900 group-hover:text-yellow-700 transition-colors line-clamp-2">
                 {title}
                 </h3>
                 <p className="mt-3 text-sm text-gray-600 line-clamp-3">{excerpt}</p>

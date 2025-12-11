@@ -8,23 +8,16 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const newsItems = [
   {
-    href: '/berita/insiden-timor-leste', 
-    imageSrc: '/images/insiden-timor-leste.webp',
-    category: 'Politics and Security',
-    date: '29 September 2025',
-    title: 'Insiden Penembakan Warga Negara Indonesia di Perbatasan Timor Leste'
+    href: 'https://www.searcunsoed.com/berita/ktt-asean-ke-47-masuknya-timor-leste-dan-penandatanganan-kuala-lumpur-peace-accord', 
+    imageSrc: '/images/asean-timorleste.webp',
+    category: 'Politics and International Relations',
+    date: '18 November 2025',
+    title: 'KTT ASEAN ke-47: Masuknya Timor Leste dan Penandatanganan Kuala Lumpur Peace Accord'
   },
   {
-    href: '/berita/malaysia-thailand',
-    imageSrc: '/images/malaysia.webp',
-    category: 'ASEAN and International Relations',
-    date: '1 Mei 2025',
-    title: 'Menghubungkan Dua Negara, Menggerakkan Satu Kawasan: Malaysia dan Thailand Luncurkan Proyek Transportasi Besar'
-  },
-  {
-    href: '/berita/johor-singapore',
+    href: 'https://www.searcunsoed.com/berita/johor-singapore-special-economic-zone-jssez-peluang-dan-tantangan-di-asia-tenggara',
     imageSrc: '/images/johor.webp',
-    category: 'Economic Zone',
+    category: 'Politics and International Relations',
     date: '28 April 2025',
     title: 'Johor-Singapore Special Economic Zone (JSSEZ): Peluang dan Tantangan di Asia Tenggara'
   },
