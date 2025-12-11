@@ -110,10 +110,10 @@ export default async function ArticleDetailPage({ params }: { params: { kategori
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const article = await getArticleDetail(params.slug);
-  if (!article) return { title: 'Artikel Tidak Ditemukan' }
-  return {
-    title: `${article.title} | SEARC Unsoed`,
-    description: article.excerpt,
-  }
+    const article = await getArticleDetail(params.slug);
+    if (!article) return { title: 'Artikel Tidak Ditemukan' }
+    return {
+        title: `${article.title} | SEARC Unsoed`,
+        description: article.excerpt,
+    }
 }
