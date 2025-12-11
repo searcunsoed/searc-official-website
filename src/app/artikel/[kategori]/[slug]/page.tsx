@@ -28,7 +28,8 @@ async function getArticleDetail(slug: string) {
     return data;
 }
 
-export default async function ArticleDetailPage({ params }: { params: { kategori: string; slug: string } }) {
+export default async function ArticleDetailPage(props: { params: Promise<{ kategori: string; slug: string }> }) {
+    const params = await props.params;
     const article = await getArticleDetail(params.slug);
     if (!article) {
         return (
@@ -109,7 +110,8 @@ export default async function ArticleDetailPage({ params }: { params: { kategori
     );
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
     const article = await getArticleDetail(params.slug);
     if (!article) return { title: 'Artikel Tidak Ditemukan' }
     return {

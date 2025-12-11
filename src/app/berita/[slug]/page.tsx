@@ -20,7 +20,8 @@ async function getNewsDetail(slug: string) {
   return data;
 }
 
-export default async function NewsDetailPage({ params }: { params: { slug: string } }) {
+export default async function NewsDetailPage(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
     const newsItem = await getNewsDetail(params.slug);
     if (!newsItem) {
         return (
@@ -76,7 +77,8 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
     );
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
     const newsItem = await getNewsDetail(params.slug);
     if (!newsItem) return { title: 'Berita Tidak Ditemukan' }
     return {
