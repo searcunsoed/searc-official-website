@@ -26,13 +26,13 @@ export default defineType({
             type: 'string',
             options: {
                 list: [
-                    {title: 'Seminar', value: 'Seminar'},
-                    {title: 'Konferensi', value: 'Konferensi'},
-                    {title: 'Workshop', value: 'Workshop'},
-                    {title: 'Diskusi Publik', value: 'Diskusi Publik'},
-                    {title: 'Peluncuran Riset', value: 'Peluncuran Riset'},
+                    {title: 'Diseminasi Riset dan Seminar', value: 'Diseminasi Riset dan Seminar'},
+                    {title: 'Pengabdian Masyarakat', value: 'Pengabdian Masyarakat'},
+                    {title: 'Podcast', value: 'Podcast'}
                 ],
+                layout: 'radio'
             },
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'mainImage',
