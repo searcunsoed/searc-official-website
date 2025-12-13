@@ -4,6 +4,8 @@ import { Activity } from '@/lib/types';
 import { FaCalendarAlt } from 'react-icons/fa';
 import Footer from '../components/Footer';
 
+export const revalidate = 60;
+
 async function getActivities() {
     const query = `*[_type == "activity"] | order(publishedAt desc) {
         _id,
