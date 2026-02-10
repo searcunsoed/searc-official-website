@@ -4,6 +4,7 @@ import {
 } from 'react-icons/fa';
 import Image from 'next/image';
 import Footer from '../components/Footer';
+import { cookies } from 'next/headers';
 
 const SUBMISSION_EMAIL = "lppmunsoed58@gmail.com";
 const EMAIL_SUBJECT = "Submission Artikel untuk SEARC Unsoed";
@@ -27,7 +28,10 @@ const submissionSteps = [
 import { FaFileWord, FaRulerCombined, FaLanguage, FaQuoteLeft, FaCertificate } from 'react-icons/fa';
 
 
-export default function WriteForUsPage() {
+export default async function WriteForUsPage() {
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
+
     return (
         <main>
             <section className="relative h-[50vh] bg-yellow-500 text-white flex items-center justify-center text-center">
@@ -121,7 +125,7 @@ export default function WriteForUsPage() {
                     </p>
                 </div>
             </section>
-            <Footer></Footer>
+            <Footer lang={lang}></Footer>
         </main>
     );
 }

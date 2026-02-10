@@ -1,29 +1,39 @@
-// src/components/FooterUGM.tsx
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
-import { FaMedium, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const socialLinks = [
-  { href: '#', icon: <FaMedium /> },
   { href: 'https://www.instagram.com/searc.unsoed', icon: <FaInstagram /> },
-  { href: '#', icon: <FaLinkedinIn /> },
+  { href: 'https://id.linkedin.com/company/lppm-unsoed', icon: <FaLinkedinIn /> },
 ];
 
-const importantLinks = [
-    { href: 'https://unsoed.ac.id/', label: 'Universitas Jenderal Soedirman' },
+export default function Footer({ lang }: { lang: string }) {
+  const t = {
+    unsoed: lang === 'en' 
+      ? 'Jenderal Soedirman University' 
+      : 'Universitas Jenderal Soedirman',
+
+    lppm: lang === 'en'
+    ? 'Institute for Research and Community Service, Unsoed'
+    : 'Lembaga Penelitian dan Pengabdian Masyarakat Unsoed',
+  }
+
+  const importantLinks = [
+    { href: 'https://unsoed.ac.id/', label: t.unsoed },
     { href: 'https://bima.kemdiktisaintek.go.id/', label: 'BIMA Kemdiktisaintek' },
-    { href: 'https://lppm.unsoed.ac.id/', label: 'Lembaga Penelitian dan Pengabdian Masyarakat Unsoed' },
+    { href: 'https://lppm.unsoed.ac.id/', label: t.lppm },
     { href: 'https://sinelitabmas.unsoed.ac.id/', label: 'Sinelitabmas Unsoed' },
-];
+  ];
 
-export default function Footer() {
   return (
     <footer className="bg-yellow-500 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-3xl font-extrabold font-sans">Kontak</h2>
+            <h2 className="text-3xl font-extrabold font-sans">
+              {lang === 'en' ? 'Contacts' : 'Kontak'}
+            </h2>
             <div className="mt-6 space-y-4 text-white">
               <p className="flex items-center gap-3">
                 <MdEmail className="text-2xl flex-shrink-0" />
@@ -37,12 +47,18 @@ export default function Footer() {
               </div>
               <p className="flex items-start gap-3">
                 <MdLocationOn className="text-2xl flex-shrink-0 mt-1" />
-                <span>Gedung LPPM Unsoed <br/> Jl. Dr. Soeparno, Grendeng, Purwokerto, Kabupaten Banyumas, Jawa Tengah 53122, Indonesia</span>
+                {
+                  lang === 'en' 
+                  ? 'LPPM Building, Unsoed, Dr. Soeparno Street, Grendeng, Purwokerto, Banyumas Regency, Central Java 53122, Indonesia' 
+                  : 'Gedung LPPM Unsoed, Jl. Dr. Soeparno, Grendeng, Purwokerto, Kabupaten Banyumas, Jawa Tengah 53122, Indonesia'
+                }
               </p>
             </div>
           </div>
           <div>
-            <h2 className="text-3xl font-extrabold font-sans">Situs Penting</h2>
+            <h2 className="text-3xl font-extrabold font-sans">
+              {lang === 'en' ? 'Important Links' : 'Situs Penting'}
+            </h2>
             <ul className="mt-6 space-y-2">
               {importantLinks.map(link => (
                 <li key={link.label}>

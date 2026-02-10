@@ -6,8 +6,12 @@ import LatestArticlesSection from "./components/LatestArticlesSection";
 import NewsSection from "./components/NewsSection";
 import InstagramSection from "./components/InstagramSection";
 import Footer from "./components/Footer";
+import { cookies } from "next/headers";
 
-export default function Home() {
+export default async function Home() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get('lang')?.value || 'id';
+
   return (
     <main className="bg-background">
       <HeroImage />
@@ -15,9 +19,9 @@ export default function Home() {
       <OverviewSection />
       <EventPage />
       <LatestArticlesSection />
-      <NewsSection />
+      <NewsSection lang={lang} />
       <InstagramSection />
-      <Footer />
+      <Footer lang={lang} />
     </main>
   );
 }

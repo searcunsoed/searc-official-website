@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import Footer from '@/app/components/Footer';
+import { cookies } from 'next/headers';
 
 interface AuthorImage {
   asset: {
@@ -12,16 +13,18 @@ interface AuthorImage {
 }
 
 async function getArticleDetail(slug: string) {
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
     const query = `*[_type == "article" && slug.current == $slug][0] {
         _id,
-        title,
+        "title": coalesce(${lang === 'en' ? 'title_en,' : ''} title),
+        "excerpt": coalesce(${lang === 'en' ? 'excerpt_en,' : ''} excerpt),
+        "body": coalesce(${lang === 'en' ? 'body_en,' : ''} body),
         category,
         publishedAt,
         mainImage,
-        excerpt,
         "authorNames": author[]->name,
-        "authorImages": author[]->profileImage,
-        body
+        "authorImages": author[]->profileImage
     }`;
     const params = { slug: slug };
     const data = await client.fetch(query, params);
@@ -30,14 +33,22 @@ async function getArticleDetail(slug: string) {
 
 export default async function ArticleDetailPage(props: { params: Promise<{ kategori: string; slug: string }> }) {
     const params = await props.params;
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
     const article = await getArticleDetail(params.slug);
     if (!article) {
         return (
         <main className="flex items-center justify-center min-h-[50vh]">
             <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900">Artikel Tidak Ditemukan</h1>
-            <p className="mt-4 text-gray-600">Maaf, kami tidak dapat menemukan artikel yang Anda cari.</p>
-            <Link href="/artikel" className="mt-6 inline-block text-blue-600 hover:underline">Kembali ke daftar artikel</Link>
+            <h1 className="text-4xl font-bold text-gray-900">
+                {lang === 'en' ? 'Article Not Found' : 'Artikel Tidak Ditemukan'}
+            </h1>
+            <p className="mt-4 text-gray-600">
+                {lang === 'en' ? "Sorry, we couldn't find the article you're looking for." : 'Maaf, kami tidak dapat menemukan artikel yang Anda cari.'}
+            </p>
+            <Link href="/artikel" className="mt-6 inline-block text-blue-600 hover:underline">
+                {lang === 'en' ? 'Back to Articles' : 'Kembali ke daftar artikel'}
+            </Link>
             </div>
         </main>
         );
@@ -52,7 +63,7 @@ export default async function ArticleDetailPage(props: { params: Promise<{ kateg
                             {article.category || 'Artikel'}
                         </Link>
                         <h1 className="mt-2 text-3xl font-extrabold font-sans text-gray-900 sm:text-4xl md:text-5xl">
-                            {article.title || 'Judul Tidak Tersedia'}
+                            {article.title || (lang === 'en' ? 'Title Not Available' : 'Judul Tidak Tersedia')}
                         </h1>
                         <div className="mt-6 flex flex-col items-center justify-center text-sm text-gray-500 gap-2">
                             <div className="flex -space-x-2 overflow-hidden">
@@ -70,13 +81,15 @@ export default async function ArticleDetailPage(props: { params: Promise<{ kateg
                                 ))}
                             </div>
                             <div className="flex items-center gap-2">
-                                <span>Oleh</span>
+                                <span>{lang === 'en' ? 'By' : 'Oleh'}</span>
                                 <span className="font-medium text-gray-700">
-                                    {article.authorNames ? article.authorNames.join(', ') : 'Penulis Tidak Diketahui'}
+                                    {article.authorNames ? article.authorNames.join(', ') : (lang === 'en' ? 'Unknown Author' : 'Penulis Tidak Diketahui')}
                                 </span>
                                 <span>•</span>
                                 <time dateTime={article.publishedAt}>
-                                    {article.publishedAt ? new Date(article.publishedAt).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Tanggal tidak tersedia'}
+                                    {article.publishedAt 
+                                        ? new Date(article.publishedAt).toLocaleDateString(lang === 'en' ? 'en-GB' : 'id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) 
+                                        : (lang === 'en' ? 'Date unavailable' : 'Tanggal tidak tersedia')}
                                 </time>
                             </div>
                         </div>
@@ -101,11 +114,13 @@ export default async function ArticleDetailPage(props: { params: Promise<{ kateg
                         <p>{article.excerpt}</p>
                     </div>
                 ) : (
-                    <div className="text-center text-gray-500 mt-12">Isi artikel belum tersedia.</div>
+                    <div className="text-center text-gray-500 mt-12">
+                        {lang === 'en' ? 'Content not available.' : 'Isi artikel belum tersedia.'}
+                    </div>
                 )}
                 </article>
             </div>
-            <Footer />
+            <Footer lang={lang} />
         </main>
     );
 }

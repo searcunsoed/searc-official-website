@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import Footer from '@/app/components/Footer';
+import { cookies } from 'next/headers';
 
 async function getNewsDetail(slug: string) {
   const query = `*[_type == "news" && slug.current == $slug][0] {
@@ -21,6 +22,8 @@ async function getNewsDetail(slug: string) {
 }
 
 export default async function NewsDetailPage(props: { params: Promise<{ slug: string }> }) {
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
     const params = await props.params;
     const newsItem = await getNewsDetail(params.slug);
     if (!newsItem) {
@@ -72,7 +75,7 @@ export default async function NewsDetailPage(props: { params: Promise<{ slug: st
                 )}
 
             </article>
-            <Footer />
+            <Footer lang={lang} />
         </main>
     );
 }

@@ -1,6 +1,7 @@
 import { client, urlFor } from '@/lib/sanityClient';
 import Image from 'next/image';
 import AnimateOnScroll from './AnimateOnScroll';
+import { cookies } from 'next/headers';
 
 interface Event {
     _id: string;
@@ -37,6 +38,8 @@ async function getUpcomingEvents() {
 
 export default async function EventPage() {
     const upcomingEvents = await getUpcomingEvents();
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
 
     return (
         <main>
@@ -46,7 +49,7 @@ export default async function EventPage() {
                         <AnimateOnScroll animationClassName="animate-slide-in-from-bottom">
                             <h2 className="text-base font-semibold text-yellow-600 tracking-wide uppercase">Event</h2>
                             <p className="mt-2 text-3xl font-extrabold font-sans text-yellow-900 sm:text-4xl">
-                                Agenda Kami
+                                {lang === 'en' ? 'Our Agendas' : 'Agenda Kami'}
                             </p>
                         </AnimateOnScroll>
                     </div>
@@ -96,11 +99,19 @@ export default async function EventPage() {
                                                     rel="noopener noreferrer"
                                                     className="w-full inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-b from-yellow-400 to-yellow-600 text-white font-bold rounded-lg shadow-lg shadow-yellow-500/30 transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-yellow-500/50 transform hover:scale-105"
                                                 >
-                                                    Daftar Sekarang
+                                                    {
+                                                        lang === 'en' 
+                                                            ? 'Register Now' 
+                                                            : 'Daftar Sekarang'
+                                                    }
                                                 </a>
                                             ) : (
                                             <span className="block w-full text-center text-gray-400 bg-gray-100 py-2 px-4 rounded-lg cursor-not-allowed">
-                                                Pendaftaran Tutup
+                                                {
+                                                    lang === 'en' 
+                                                        ? 'Registration is Closed' 
+                                                        : 'Pendaftaran Tutup'
+                                                }
                                             </span>
                                             )}
                                         </div>
@@ -111,8 +122,20 @@ export default async function EventPage() {
                         </div>
                     ) : (
                         <div className="bg-white rounded-xl p-10 text-center border border-dashed border-gray-300">
-                            <p className="text-gray-500 text-lg">Belum ada agenda mendatang saat ini.</p>
-                            <p className="text-sm text-gray-400">Pantau terus sosial media kami untuk update terbaru.</p>
+                            <p className="text-gray-500 text-lg">
+                                {
+                                    lang === 'en' 
+                                        ? 'There are no upcoming events at this time.' 
+                                        : 'Belum ada agenda mendatang saat ini.'
+                                }
+                            </p>
+                            <p className="text-sm text-gray-400">
+                                {
+                                    lang === 'en' 
+                                        ? 'Keep an eye on our social media for the latest updates.' 
+                                        : 'Pantau terus sosial media kami untuk update terbaru.'
+                                }
+                            </p>
                         </div>
                     )}
                 </div>

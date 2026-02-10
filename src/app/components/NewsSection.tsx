@@ -6,24 +6,34 @@ import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 import AnimateOnScroll from './AnimateOnScroll';
 
-const newsItems = [
-  {
-    href: 'https://www.searcunsoed.com/berita/ktt-asean-ke-47-masuknya-timor-leste-dan-penandatanganan-kuala-lumpur-peace-accord', 
-    imageSrc: '/images/asean-timorleste.webp',
-    category: 'Politics and International Relations',
-    date: '18 November 2025',
-    title: 'KTT ASEAN ke-47: Masuknya Timor Leste dan Penandatanganan Kuala Lumpur Peace Accord'
-  },
-  {
-    href: 'https://www.searcunsoed.com/berita/johor-singapore-special-economic-zone-jssez-peluang-dan-tantangan-di-asia-tenggara',
-    imageSrc: '/images/johor.webp',
-    category: 'Politics and International Relations',
-    date: '28 April 2025',
-    title: 'Johor-Singapore Special Economic Zone (JSSEZ): Peluang dan Tantangan di Asia Tenggara'
-  },
-];
+export default function NewsSection({ lang }: { lang: string }) {
+  const t = {
+    title1: lang === 'en' 
+      ? '47th ASEAN Summit: The Entry of Timor Leste and the Signing of the Kuala Lumpur Peace Accord' 
+      : 'KTT ASEAN ke-47: Masuknya Timor Leste dan Penandatanganan Kuala Lumpur Peace Accord',
 
-export default function NewsSection() {
+    title2: lang === 'en' 
+      ? 'Johor-Singapore Special Economic Zone (JSSEZ): Opportunities and Challenges in Southeast Asia' 
+      : 'Johor-Singapore Special Economic Zone (JSSEZ): Peluang dan Tantangan di Asia Tenggara',
+  }
+
+  const newsItems = [
+    {
+      href: 'https://www.searcunsoed.com/berita/ktt-asean-ke-47-masuknya-timor-leste-dan-penandatanganan-kuala-lumpur-peace-accord', 
+      imageSrc: '/images/asean-timorleste.webp',
+      category: 'Politics and International Relations',
+      date: '18 November 2025',
+      title: t.title1
+    },
+    {
+      href: 'https://www.searcunsoed.com/berita/johor-singapore-special-economic-zone-jssez-peluang-dan-tantangan-di-asia-tenggara',
+      imageSrc: '/images/johor.webp',
+      category: 'Politics and International Relations',
+      date: '28 April 2025',
+      title: t.title2
+    },
+  ];
+
   const [activeImage, setActiveImage] = useState(newsItems[0].imageSrc);
 
   return (
@@ -31,9 +41,15 @@ export default function NewsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <AnimateOnScroll animationClassName="animate-slide-in-from-bottom">
-            <h2 className="text-base font-semibold text-yellow-600 tracking-wide uppercase">SEA Update</h2>
+            <h2 className="text-base font-semibold text-yellow-600 tracking-wide uppercase">
+              {lang === 'en' ? 'SEA Updates' : 'SEA Updates'}
+            </h2>
             <p className="mt-2 text-3xl font-extrabold font-sans text-yellow-900 sm:text-4xl">
-              Berita Terbaru dari SEARC
+              {
+                lang === 'en' 
+                ? 'The Latest News from SEARC' 
+                : 'Berita Terbaru dari SEARC'
+              }
             </p>
           </AnimateOnScroll>
         </div>
@@ -74,7 +90,11 @@ export default function NewsSection() {
         </AnimateOnScroll>
         <div className="mt-12 flex justify-center">
             <Link href="/berita" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-b from-yellow-400 to-yellow-600 text-white font-bold rounded-lg shadow-lg shadow-yellow-500/30 transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-yellow-500/50 transform hover:scale-105">
-              Lihat SEA Update Lainnya
+              {
+                lang === 'en' 
+                ? 'See More SEA Updates' 
+                : 'Lihat SEA Update Lainnya'
+              }
               <FaArrowRight className="ml-3 -mr-1 h-4 w-4" />
             </Link>
         </div>

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Funnel_Display, Figtree } from "next/font/google";
+import { Sora, Figtree } from "next/font/google";
 import './globals.css';
 import Navbar from "./components/Navbar";
+import { cookies } from "next/headers";
 
-const funnelDisplay = Funnel_Display({
+const sora = Sora({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -20,17 +21,20 @@ export const metadata: Metadata = {
   description: "Pusat Riset Kebijakan Strategis Kawasan Asia Tenggara Universitas Jenderal Soedirman",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get('lang')?.value || 'id';
+
   return (
     <html lang="en">
       <body
-        className={`${funnelDisplay.variable} ${figtree.variable} antialiased`}
+        className={`${sora.variable} ${figtree.variable} antialiased`}
       >
-        <Navbar />
+        <Navbar lang={lang} />
         {children}
       </body>
     </html>

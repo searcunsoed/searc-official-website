@@ -5,38 +5,54 @@ import Link from 'next/link';
 import Dropdown from './Dropdown';
 import Image from 'next/image';
 import MobileNavLink from './MobileNavLink';
+import LanguageSwitcher from './LanguageSwitcher';
 
-export default function Navbar() {
+export default function Navbar({ lang }: { lang: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const t = {
+    profil: lang === 'en' ? 'Profile' : 'Profil',
+      selayang: lang === 'en' ? 'Overview' : 'Selayang Pandang',
+      peneliti: lang === 'en' ? 'Researchers' : 'Peneliti',
+      asisten: lang === 'en' ? 'Research Assistants' : 'Asisten Peneliti',
+      mitra: lang === 'en' ? 'Partners' : 'Mitra',
+    publikasi: lang === 'en' ? 'Publications' : 'Publikasi',
+      buku: lang === 'en' ? 'Book Chapter' : 'Book Chapter',
+      proceedings: lang=== 'en' ? 'Proceedings' : 'Prosiding',
+      journal: lang=== 'en' ? 'SEA Insight Journal' : 'Jurnal SEA Insight',
+    artikel: lang === 'en' ? 'Articles' : 'Artikel',
+    berita: lang === 'en' ? 'SEA Update' : 'SEA Update',
+    aktivitas: lang === 'en' ? 'Our Activities' : 'Aktivitas Kami',
+    tulis: lang === 'en' ? 'Write for Us' : 'Write for Us',
+  };
+
   const navLinks = [
-    { href: '/', label: 'Beranda' },
     { 
       href: '/profil', 
-      label: 'Profil',
+      label: t.profil,
       subMenu: [
-        { href: '/selayang-pandang', label: 'Selayang Pandang' },
-        { href: '/peneliti', label: 'Peneliti' },
-        { href: '/asisten-peneliti', label: 'Asisten Peneliti' },
-        { href: '/mitra', label: 'Mitra' },
+        { href: '/selayang-pandang', label: t.selayang },
+        { href: '/peneliti', label: t.peneliti },
+        { href: '/asisten-peneliti', label: t.asisten },
+        { href: '/mitra', label: t.mitra },
       ] 
     },
     { 
       href: '/publikasi',
-      label: 'Publikasi',
+      label: t.publikasi,
       subMenu: [
-        { href: '/buku', label: 'Book Chapter' },
-        { href: '/proceedings', label: 'Proceedings' },
+        { href: '/buku', label: t.buku },
+        { href: '/proceedings', label: t.proceedings },
         { 
           href: 'https://jos.unsoed.ac.id/index.php/sassp/focus_and_scope', 
-          label: 'Jurnal SEA-Insight', 
+          label: t.journal, 
           isExternal: true
         },
       ]
     },
     { 
       href: '/artikel', 
-      label: 'Artikel',
+      label: t.artikel,
       subMenu: [
         { href: '/artikel/economic-social', label: 'Economic and Social Walfare' },
         { href: '/artikel/law-and-human-rights', label: 'Law and Human Rights' },
@@ -44,9 +60,9 @@ export default function Navbar() {
         { href: '/artikel/culture-linguistics', label: 'Culture and Linguistics' },
       ]
     },
-    { href: '/berita', label: 'SEA Update' },
-    { href: '/aktivitas', label: 'Aktivitas Kami' },
-    { href: '/submission', label: 'Write for Us' },
+    { href: '/berita', label: t.berita },
+    { href: '/aktivitas', label: t.aktivitas },
+    { href: '/submission', label: t.tulis },
   ];
 
   return (
@@ -73,6 +89,9 @@ export default function Navbar() {
                   </Link>
                 )
               ))}
+              <div className="pl-4 ml-2 border-l border-yellow-300/50 h-6 flex items-center">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -106,6 +125,9 @@ export default function Navbar() {
               closeMenu={() => setIsOpen(false)} 
             />
           ))}
+          <div className="mt-4 pt-4 border-t border-yellow-400/50 flex justify-center pb-2">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </nav>

@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import AnimateOnScroll from './AnimateOnScroll';
+import { cookies } from 'next/headers';
 
-export default function HeroImage() {
+export default async function HeroImage() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get('lang')?.value || 'id';
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <Image
@@ -17,14 +21,14 @@ export default function HeroImage() {
         <div className="max-w-4xl px-4">
           <AnimateOnScroll animationClassName="animate-slide-in-from-bottom">
             <h1 className="font-extrabold text-5xl md:text-7xl font-sans text-white drop-shadow-lg">
-              Pusat Riset
+              {lang === 'en' ? 'Southeast Asian' : 'Pusat Riset'}
               <br />
-              Kebijakan Strategis
+              {lang === 'en' ? 'Strategic Policies' : 'Kebijakan Strategis'}
               <br />
-              Asia Tenggara
+              {lang === 'en' ? 'Research Center' : 'Asia Tenggara'}
             </h1>
             <p className="mt-6 text-xg md:text-2xl text-white drop-shadow-md">
-              Universitas Jenderal Soedirman
+              {lang === 'en' ? 'Jenderal Soedirman University' : 'Universitas Jenderal Soedirman'}
             </p>
           </AnimateOnScroll>
         </div>

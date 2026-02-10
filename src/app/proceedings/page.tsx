@@ -4,6 +4,7 @@ import { client } from '@/lib/sanityClient';
 import Image from 'next/image';
 import { Proceedings } from '@/lib/types';
 import Footer from '../components/Footer';
+import { cookies } from 'next/headers';
 
 async function getProceedings() {
   const query = `*[_type == "proceedings"] | order(_createdAt desc)`;
@@ -12,6 +13,8 @@ async function getProceedings() {
 }
 
 export default async function ProceedingsPage() {
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
     const proceedingsList = await getProceedings();
 
     return (
@@ -83,7 +86,7 @@ export default async function ProceedingsPage() {
                     </div>
                 )}
             </section>
-            <Footer />
+            <Footer lang={lang} />
         </main>
     );
 }

@@ -7,7 +7,13 @@ export default defineType({
   fields: [
     defineField({ 
         name: 'title', 
-        title: 'Judul Artikel', 
+        title: 'Judul Artikel (Indonesia)', 
+        type: 'string', 
+        validation: (Rule) => Rule.required() 
+    }),
+    defineField({ 
+        name: 'title_en', 
+        title: 'Judul Artikel (English)', 
         type: 'string', 
         validation: (Rule) => Rule.required() 
     }),
@@ -55,13 +61,24 @@ export default defineType({
     }),
     defineField({ 
         name: 'excerpt', 
-        title: 'Kutipan Singkat (Excerpt)', 
+        title: 'Kutipan Singkat (Indonesia)', 
+        type: 'text', 
+        rows: 3 
+    }),
+    defineField({ 
+        name: 'excerpt_en', 
+        title: 'Kutipan Singkat (English)', 
         type: 'text', 
         rows: 3 
     }),
     defineField({
         name: 'body',
-        title: 'Isi Artikel Lengkap',
+        title: 'Isi Artikel Lengkap (Indonesia)',
+        type: 'blockContent',
+    }),
+    defineField({
+        name: 'body_en',
+        title: 'Isi Artikel Lengkap (English)',
         type: 'blockContent',
     }),
   ],

@@ -2,71 +2,122 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 import AnimateOnScroll from './AnimateOnScroll';
+import { cookies } from 'next/headers';
 
-const articles = [
-  {
-    href: 'https://www.searcunsoed.com/artikel/politics-ir/diplomasi-hijau-indonesia-antara-retorika-dan-realitas',
-    imageSrc: '/images/banjir-sumatera.webp',
-    category: 'Politics and International Relations Research',
-    title: 'Diplomasi Hijau Indonesia: Antara Retorika dan Realitas',
-    author: 'Arif Darmawan',
-    date: '8 Desember 2025',
-    snippet: 'LEBIH dari 800 jiwa melayang dalam bencana banjir bandang yang menghantam tiga provinsi di Sumatera pada akhir November 2025...',
-  },
-  {
-    href: 'https://www.searcunsoed.com/artikel/culture-linguistics/pop-culture-as-protest-komparasi-gerakan-sosial-one-piece-di-indonesia-filipina-dan-nepal-dalam-reformasi-politik-dan-representasi-rakyat',
-    imageSrc: '/images/one-piece.webp',
-    category: 'Culture and Linguistics',
-    title: '"Pop Culture as Protest": Komparasi Gerakan Sosial "One Piece" di Indonesia, Filipina, dan Nepal dalam Reformasi Politik dan Representasi Rakyat',
-    author: 'Putu Puspa Widyanti, dan Azkia Sofie Wulandari',
-    date: '25 November 2025',
-  },
-  {
-    href: 'https://www.searcunsoed.com/artikel/economic-social/stabilitas-politik-sebagai-prediktor-pertumbuhan-ekonomi-tinjauan-krisis-domestik-di-tiga-negara-asean',
-    imageSrc: '/images/demo.webp',
-    category: 'Economic and Social Walfare',
-    title: 'Stabilitas Politik sebagai Prediktor Pertumbuhan Ekonomi: Tinjauan Krisis Domestik di Tiga Negara ASEAN',
-    author: 'Fabian Adam dan Fahreza Adi Prabowo',
-    date: '11 September 2025',
-  },
-  {
-    href: 'https://www.searcunsoed.com/artikel/law-and-human-rights/local-currency-settlement-di-asean',
-    imageSrc: '/images/currency.webp',
-    category: 'Law and Human Rights',
-    title: 'Local Currency Settlements in ASEAN',
-    author: 'Fabian Adam',
-    date: '3 Juni 2025',
-  },
-  {
-    href: 'https://www.searcunsoed.com/artikel/economic-social/di-antara-keberhasilan-dan-skandal-apa-yang-bisa-dipelajari-danantara-dari-temasek-khazanah-dan-1mdb',
-    imageSrc: '/images/danantara.webp',
-    category: 'Economic and Social Walfare',
-    title: 'Di Antara Keberhasilan dan Skandal: Apa yang Bisa Dipelajari Danantara dari Temasek, Khazanah, dan 1MDB?',
-    author: 'Mahardika R. dan Nabilah Ailen',
-    date: '3 Juni 2025',
-  },
-  {
-    href: 'https://www.searcunsoed.com/artikel/politics-ir/efek-domino-kebijakan-tarif-trump-dari-eropa-hingga-asia',
-    imageSrc: '/images/trump.webp',
-    category: 'Politics and International Relations Research',
-    title: 'Efek Domino Kebijakan Tarif Trump dari Eropa Hingga Asia',
-    author: 'Mahardika R. dan Nabilah Ailen',
-    date: '3 Juni 2025',
-  },
-];
+export default async function LatestArticlesSection() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get('lang')?.value || 'id';
 
-const featuredArticle = articles[0];
-const otherArticles = articles.slice(1);
+  const t = {
+    title1: lang === 'en' 
+    ? 'Board of Peace Trump: A Trap for Indonesian Leadership in the Global South' 
+    : 'Board of Peace Trump: Jebakan bagi Kepemimpinan Indonesia di Global South',
+    snippet: lang === 'en' 
+    ? 'Decision of Indonesia to join the Board of Peace initiated by Donald Trump on January 22, 2026, in Davos deserves critical attention...' 
+    : 'KEPUTUSAN Indonesia untuk bergabung dalam Board of Peace yang diprakarsai Donald Trump pada 22 Januari 2026, di Davos patut mendapat sorotan kritis...',
 
-export default function LatestArticlesSection() {
+    title2: lang === 'en' 
+    ? 'The US invasion of Venezuela: How should Indonesia respond?' 
+    : 'Invasi AS ke Venezuela: Bagaimana Seharusnya Indonesia Bersikap?',
+
+    title3: lang === 'en' 
+    ? 'Southeast Asian Geopolitics in 2025: Between Great Power Rivalry and the Fragility of ASEAN Centrality' 
+    : 'Geopolitik Asia Tenggara 2025: Antara Rivalitas Kekuatan Besar dan Rapuhnya Sentralitas ASEAN',
+
+    title4: lang === 'en' 
+    ? 'Green Diplomacy of Indonesia: Between Rhetoric and Reality' 
+    : 'Diplomasi Hijau Indonesia: Antara Retorika dan Realitas',
+
+    title5: lang === 'en' 
+    ? '"Pop Culture as Protest": A Comparison of the “One Piece” Social Movement in Indonesia, the Philippines, and Nepal in Political Reform and Peoples Representation' 
+    : '"Pop Culture as Protest": Komparasi Gerakan Sosial "One Piece" di Indonesia, Filipina, dan Nepal dalam Reformasi Politik dan Representasi Rakyat',
+
+    title6: lang === 'en' 
+    ? 'Political Stability as a Predictor of Economic Growth: A Review of Domestic Crises in Three ASEAN Countries' 
+    : 'Stabilitas Politik sebagai Prediktor Pertumbuhan Ekonomi: Tinjauan Krisis Domestik di Tiga Negara ASEAN',
+
+    title7: lang === 'en' 
+    ? 'Local Currency Settlements in ASEAN' 
+    : 'Local Currency Settlements in ASEAN',
+  }
+
+  const articles = [
+    {
+      href: 'https://www.searcunsoed.com/artikel/politics-ir/board-of-peace-trump-jebakan-bagi-kepemimpinan-indonesia-di-global-south',
+      imageSrc: '/images/bop.webp',
+      category: 'Politics and International Relations Research',
+      title: t.title1,
+      author: 'Arif Darmawan',
+      date: '5 Februari 2026',
+      snippet: t.snippet,
+    },
+    {
+      href: 'https://www.searcunsoed.com/artikel/politics-ir/invasi-as-ke-venezuela-bagaimana-seharusnya-indonesia-bersikap',
+      imageSrc: '/images/venezuela.webp',
+      category: 'Politics and International Relations Research',
+      title: t.title2,
+      author: 'Arif Darmawan',
+      date: '7 Januari 2026',
+    },
+    {
+      href: 'https://www.searcunsoed.com/artikel/politics-ir/efek-domino-kebijakan-tarif-trump-dari-eropa-hingga-asia',
+      imageSrc: '/images/asean-logo.webp',
+      category: 'Politics and International Relations Research',
+      title: t.title3,
+      author: 'Fabian Adam, dan Fahreza Adi Prabowo',
+      date: '26 Desember 2025',
+    },
+    {
+      href: 'https://www.searcunsoed.com/artikel/politics-ir/diplomasi-hijau-indonesia-antara-retorika-dan-realitas',
+      imageSrc: '/images/banjir-sumatera.webp',
+      category: 'Politics and International Relations Research',
+      title: t.title4,
+      author: 'Arif Darmawan',
+      date: '8 Desember 2025',
+    },
+    {
+      href: 'https://www.searcunsoed.com/artikel/culture-linguistics/pop-culture-as-protest-komparasi-gerakan-sosial-one-piece-di-indonesia-filipina-dan-nepal-dalam-reformasi-politik-dan-representasi-rakyat',
+      imageSrc: '/images/one-piece.webp',
+      category: 'Culture and Linguistics',
+      title: t.title5,
+      author: 'Putu Puspa Widyanti, dan Azkia Sofie Wulandari',
+      date: '25 November 2025',
+    },
+    {
+      href: 'https://www.searcunsoed.com/artikel/economic-social/stabilitas-politik-sebagai-prediktor-pertumbuhan-ekonomi-tinjauan-krisis-domestik-di-tiga-negara-asean',
+      imageSrc: '/images/demo.webp',
+      category: 'Economic and Social Walfare',
+      title: t.title6,
+      author: 'Fabian Adam dan Fahreza Adi Prabowo',
+      date: '11 September 2025',
+    },
+    {
+      href: 'https://www.searcunsoed.com/artikel/law-and-human-rights/local-currency-settlement-di-asean',
+      imageSrc: '/images/currency.webp',
+      category: 'Law and Human Rights',
+      title: t.title7,
+      author: 'Fabian Adam',
+      date: '3 Juni 2025',
+    },
+  ];
+
+  const featuredArticle = articles[0];
+  const otherArticles = articles.slice(1);
+
   return (
     <section className="bg-gradient-to-t from-white to-yellow-500/10 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <AnimateOnScroll animationClassName="animate-slide-in-from-bottom">
-            <h2 className="text-base font-semibold text-yellow-600 tracking-wide uppercase">Publikasi</h2>
+            <h2 className="text-base font-semibold text-yellow-600 tracking-wide uppercase">
+              {lang === 'en' ? 'Publications' : 'Publikasi'}
+            </h2>
             <p className="mt-2 text-3xl font-extrabold font-sans text-yellow-900 sm:text-4xl">
-              Artikel Terbaru dari SEARC
+              {
+                lang === 'en' 
+                ? 'Latest Articles from SEARC' 
+                : 'Artikel Terbaru dari SEARC'
+              }
             </p>
           </AnimateOnScroll>
         </div>
@@ -125,7 +176,11 @@ export default function LatestArticlesSection() {
         </AnimateOnScroll>
         <div className="mt-8 flex justify-center">
             <Link href="/artikel/economic-social" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-b from-yellow-400 to-yellow-600 text-white font-bold rounded-lg shadow-lg shadow-yellow-500/30 transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-yellow-500/50 transform hover:scale-105">
-              Lihat Semua Artikel
+              {
+                lang === 'en' 
+                ? 'See More Articles' 
+                : 'Lihat Semua Artikel'
+              }
               <FaArrowRight className="ml-3 -mr-1 h-4 w-4" />
             </Link>
         </div>

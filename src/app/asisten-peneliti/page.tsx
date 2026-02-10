@@ -1,31 +1,56 @@
 import AssistantCard from "../components/AssistantCard";
 import Image from "next/image";
 import Footer from "../components/Footer";
+import { cookies } from "next/headers";
 
-const researchAssistantsByDivision = {
-  "Departemen Jurnal dan Penerbitan Ilmiah": [
-    { name: 'Fabian Adam', major: 'Hubungan Internasional', image: '/images/team/adam.webp', email: '#' },
-    { name: 'Luthfi Nabilah Ailen', major: 'Hukum', image: '/images/team/nabilah.webp', email: '#' },
-    { name: 'Mahardika Rahmawati', major: 'Hubungan Internasional', image: '/images/team/mahardika.webp', email: '#' },
-    { name: 'Putu Puspa Widyanti', major: 'Hubungan Internasional', image: '/images/team/putu.webp', email: '#' },
-    { name: 'Azkia Sofie Wulandari', major: 'Hubungan Internasional', image: '/images/team/azkia.webp', email: '#' },
-    { name: 'Fahreza Adi Prabowo', major: 'Hubungan Internasional', image: '/images/team/fahreza.webp', email: '#' },
-  ],
-  "Departemen Webinar dan Diseminasi Riset": [
-    { name: 'David Aryodhi', major: 'Hubungan Internasional', image: '/images/team/david.webp', email: '#' },
-    { name: 'Christiano Disa Pradana', major: 'Hubungan Internasional', image: '/images/team/disa.webp', email: '#' },
-    { name: 'Yupitha Meidianti', major: 'Hubungan Internasional', image: '/images/team/yupitha.webp', email: '#' },
-    { name: 'Nabilla Kheysha Azzahra', major: 'Hubungan Internasional', image: '/images/team/kheysha.webp', email: '#' },
-  ],
-  "Departemen Media Sosial": [
-    { name: 'Azra Kusuma', major: 'Hubungan Internasional', image: '/images/team/azra.webp', email: '#' },
-    { name: 'Rahel Fazilla', major: 'Hubungan Internasional', image: '/images/team/rahel.webp', email: '#' },
-    { name: 'Nor Elisah', major: 'Hubungan Internasional', image: '/images/team/elisah.webp', email: '#' },
-    { name: 'Yuana Aulia Syafrilia', major: 'Hubungan Internasional', image: '/images/team/yuana.webp', email: '#' },
-  ]
-};
+export default async function AsistenPenelitiPage() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get('lang')?.value || 'id';
 
-export default function AsistenPenelitiPage() {
+  const t = {
+    department1: lang === 'en' 
+    ? 'Department of Journals and Scientific Publishing' 
+    : 'Departemen Jurnal dan Penerbitan Ilmiah',
+
+    department2: lang === 'en' 
+    ? 'Webinar and Research Dissemination Department' 
+    : 'Departemen Webinar dan Diseminasi Riset',
+
+    department3: lang === 'en' 
+    ? 'Social Media Department' 
+    : 'Departemen Media Sosial',
+
+    ir: lang === 'en' 
+    ? 'International Relations' 
+    : 'Hubungan Internasional',
+
+    law: lang === 'en' 
+    ? 'Law' 
+    : 'Hukum',
+  }
+
+  const researchAssistantsByDivision = {
+    [t.department1] : [
+      { name: 'Fabian Adam', major: t.ir, image: '/images/team/adam.webp', email: '#' },
+      { name: 'Mahardika Rahmawati', major: t.ir, image: '/images/team/mahardika.webp', email: '#' },
+      { name: 'Putu Puspa Widyanti', major: t.ir, image: '/images/team/putu.webp', email: '#' },
+      { name: 'Azkia Sofie Wulandari', major: t.ir, image: '/images/team/azkia.webp', email: '#' },
+      { name: 'Fahreza Adi Prabowo', major: t.ir, image: '/images/team/fahreza.webp', email: '#' },
+    ],
+    [t.department2] : [
+      { name: 'David Aryodhi', major: t.ir, image: '/images/team/david.webp', email: '#' },
+      { name: 'Christiano Disa Pradana', major: t.ir, image: '/images/team/disa.webp', email: '#' },
+      { name: 'Yupitha Meidianti', major: t.ir, image: '/images/team/yupitha.webp', email: '#' },
+      { name: 'Nabilla Kheysha Azzahra', major: t.ir, image: '/images/team/kheysha.webp', email: '#' },
+    ],
+    [t.department3]: [
+      { name: 'Azra Kusuma', major: t.ir, image: '/images/team/azra.webp', email: '#' },
+      { name: 'Rahel Fazilla', major: t.ir, image: '/images/team/rahel.webp', email: '#' },
+      { name: 'Nor Elisah', major: t.ir, image: '/images/team/elisah.webp', email: '#' },
+      { name: 'Yuana Aulia Syafrilia', major: t.ir, image: '/images/team/yuana.webp', email: '#' },
+    ]
+  };
+
   return (
     <main className="bg-slate-50 min-h-screen">
         <section className="relative h-[50vh] bg-yellow-500 text-white flex items-center justify-center text-center">
@@ -36,9 +61,19 @@ export default function AsistenPenelitiPage() {
                 className="object-cover z-0 opacity-50"
             />
             <div className="relative z-10 p-4">
-                <h1 className="text-4xl md:text-6xl font-extrabold font-sans">Profil Asisten Peneliti SEARC Unsoed</h1>
+                <h1 className="max-w-6xl text-4xl md:text-6xl font-bold font-sans">
+                  {
+                    lang === 'en' 
+                    ? 'Profile of the SEARC Unsoed Research Assistants' 
+                    : 'Profil Asisten Peneliti SEARC Unsoed'
+                  }
+                </h1>
                 <p className="mt-4 text-lg text-white">
-                    Tim asisten peneliti kami yang berdedikasi mendukung kegiatan riset dan operasional SEARC Unsoed.
+                  {
+                    lang === 'en' 
+                    ? 'Our dedicated team of research assistants supports SEARC Unsoed research and operational activities.' 
+                    : 'Tim asisten peneliti kami yang berdedikasi mendukung kegiatan riset dan operasional SEARC Unsoed.'
+                  }
                 </p>
             </div>
         </section>
@@ -58,7 +93,7 @@ export default function AsistenPenelitiPage() {
             ))}
             </div>
         </div>
-        <Footer />
+        <Footer lang={lang} />
     </main>
   );
 }

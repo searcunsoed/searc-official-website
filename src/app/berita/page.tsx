@@ -3,6 +3,7 @@ import { client, urlFor } from '@/lib/sanityClient';
 import Image from 'next/image';
 import { News } from '@/lib/types';
 import Footer from '../components/Footer';
+import { cookies } from 'next/headers';
 
 async function getNews() {
   const query = `*[_type == "news"] | order(publishedAt desc)`;
@@ -11,6 +12,8 @@ async function getNews() {
 }
 
 export default async function BeritaPage() {
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
     const newsList = await getNews();
 
     return (
@@ -51,7 +54,7 @@ export default async function BeritaPage() {
                 </div>
                 )}
             </section>
-            <Footer />
+            <Footer lang={lang} />
         </main>
     );
 }

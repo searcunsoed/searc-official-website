@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Activity } from '@/lib/types';
 import { FaCalendarAlt } from 'react-icons/fa';
 import Footer from '../components/Footer';
+import { cookies } from 'next/headers';
 
 export const revalidate = 60;
 
@@ -19,6 +20,8 @@ async function getActivities() {
 }
 
 export default async function ActivitiesPage() {
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
     const activities: Activity[] = await getActivities();
     const categoriesToCheck = [
         'Diseminasi Riset dan Seminar', 
@@ -95,7 +98,7 @@ export default async function ActivitiesPage() {
                     );
                 })}
             </div>
-            <Footer />
+            <Footer lang={lang} />
         </main>
     );
 }

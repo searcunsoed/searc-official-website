@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Article } from '@/lib/types';
 import { categoryMappings } from '@/lib/categoryMappings';
 import Footer from '@/app/components/Footer';
+import { cookies } from 'next/headers';
 
 async function getArticlesByCategory(categorySlug: string) {
     const mapping = categoryMappings[categorySlug] || {};
@@ -11,8 +12,17 @@ async function getArticlesByCategory(categorySlug: string) {
 
     if (!sanityCategory) return [];
 
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
+
     const query = `*[_type == "article" && category == $sanityCategory] | order(publishedAt desc) {
-        ...,
+        _id,
+        "title": coalesce(${lang === 'en' ? 'title_en,' : ''} title),
+        "excerpt": coalesce(${lang === 'en' ? 'excerpt_en,' : ''} excerpt),
+        slug,
+        publishedAt,
+        mainImage,
+        category,
         "authorNames": author[]->name
     }`;
     
@@ -24,6 +34,8 @@ async function getArticlesByCategory(categorySlug: string) {
 
 export default async function CategoryPage(props: { params: Promise<{ kategori: string }> }) {
     const params = await props.params;
+    const cookieStore = await cookies();
+    const lang = cookieStore.get('lang')?.value || 'id';
     const categorySlug = params.kategori;
 
     const mapping = categoryMappings[categorySlug] || { pageTitle: "Kategori Tidak Ditemukan" };
@@ -41,7 +53,9 @@ export default async function CategoryPage(props: { params: Promise<{ kategori: 
                   className="object-cover z-0 opacity-50"
               />
               <div className="relative z-10 p-4">
-                  <p className="text-base font-semibold text-white">Kategori Artikel</p>
+                  <p className="text-base font-semibold text-white">
+                    {lang === 'en' ? 'Article Category' : 'Kategori Artikel'}
+                  </p>
                   <h1 className="mt-2 text-4xl font-extrabold font-sans text-white sm:text-5xl">
                       {categoryName}
                   </h1>
@@ -66,15 +80,15 @@ export default async function CategoryPage(props: { params: Promise<{ kategori: 
               ) : (
               <div className="text-center py-16">
                   <h3 className="text-2xl font-bold font-sans text-yellow-700">
-                      Belum Ada Artikel
+                      {lang === 'en' ? 'Article Not Found' : 'Belum ada artikel'}
                   </h3>
                   <p className="mt-2 text-gray-600">
-                      Saat ini belum ada artikel yang dipublikasikan dalam kategori ini.
+                      {lang === 'en' ? 'There are currently no articles published in this category.' : 'Saat ini belum ada artikel yang dipublikasikan dalam kategori ini.'}
                   </p>
               </div>
               )}
           </section>
-          <Footer />
+          <Footer lang={lang} />
       </main>
     );
 }
