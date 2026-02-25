@@ -10,11 +10,11 @@ export default async function LatestArticlesSection() {
 
   const t = {
     title1: lang === 'en' 
-    ? 'Board of Peace Trump: A Trap for Indonesian Leadership in the Global South' 
-    : 'Board of Peace Trump: Jebakan bagi Kepemimpinan Indonesia di Global South',
+    ? 'The SEAblings Phenomenon and the Birth of a Pan-Southeast Asian Digital Identity' 
+    : 'Fenomena SEAblings dan Kelahiran Identitas Digital Pan-Asia Tenggara',
     snippet: lang === 'en' 
-    ? 'Decision of Indonesia to join the Board of Peace initiated by Donald Trump on January 22, 2026, in Davos deserves critical attention...' 
-    : 'KEPUTUSAN Indonesia untuk bergabung dalam Board of Peace yang diprakarsai Donald Trump pada 22 Januari 2026, di Davos patut mendapat sorotan kritis...',
+    ? 'On August 30, 2025, a Thai digital activist named Yammi posted a simple message on the X platform: that it turns out the cross-border food delivery feature on the Grab app...' 
+    : 'Pada 30 Agustus 2025, seorang aktivis digital asal Thailand bernama Yammi mengunggah pesan sederhana di platform X: bahwa ternyata fitur pengiriman makanan lintas negara di aplikasi Grab...',
 
     title2: lang === 'en' 
     ? 'The US invasion of Venezuela: How should Indonesia respond?' 
@@ -37,19 +37,27 @@ export default async function LatestArticlesSection() {
     : 'Stabilitas Politik sebagai Prediktor Pertumbuhan Ekonomi: Tinjauan Krisis Domestik di Tiga Negara ASEAN',
 
     title7: lang === 'en' 
-    ? 'Local Currency Settlements in ASEAN' 
-    : 'Local Currency Settlements in ASEAN',
+    ? 'Board of Peace Trump: A Trap for Indonesian Leadership in the Global South' 
+    : 'Board of Peace Trump: Jebakan bagi Kepemimpinan Indonesia di Global South',
   }
 
   const articles = [
     {
-      href: 'https://www.searcunsoed.com/artikel/politics-ir/board-of-peace-trump-jebakan-bagi-kepemimpinan-indonesia-di-global-south',
-      imageSrc: '/images/bop.webp',
+      href: 'https://www.searcunsoed.com/artikel/politics-ir/fenomena-seablings-dan-kelahiran-identitas-digital-pan-asia-tenggara',
+      imageSrc: '/images/seablings.jpeg',
       category: 'Politics and International Relations Research',
       title: t.title1,
       author: 'Arif Darmawan',
-      date: '5 Februari 2026',
+      date: '21 Februari 2026',
       snippet: t.snippet,
+    },
+    {
+      href: 'https://www.searcunsoed.com/artikel/politics-ir/board-of-peace-trump-jebakan-bagi-kepemimpinan-indonesia-di-global-south',
+      imageSrc: '/images/bop.webp',
+      category: 'Politics and International Relations Research',
+      title: t.title7,
+      author: 'Arif Darmawan',
+      date: '5 Februari 2026',
     },
     {
       href: 'https://www.searcunsoed.com/artikel/politics-ir/invasi-as-ke-venezuela-bagaimana-seharusnya-indonesia-bersikap',
@@ -90,14 +98,6 @@ export default async function LatestArticlesSection() {
       title: t.title6,
       author: 'Fabian Adam dan Fahreza Adi Prabowo',
       date: '11 September 2025',
-    },
-    {
-      href: 'https://www.searcunsoed.com/artikel/law-and-human-rights/local-currency-settlement-di-asean',
-      imageSrc: '/images/currency.webp',
-      category: 'Law and Human Rights',
-      title: t.title7,
-      author: 'Fabian Adam',
-      date: '3 Juni 2025',
     },
   ];
 
