@@ -10,11 +10,11 @@ export default async function LatestArticlesSection() {
 
   const t = {
     title1: lang === 'en' 
-    ? 'The SEAblings Phenomenon and the Birth of a Pan-Southeast Asian Digital Identity' 
-    : 'Fenomena SEAblings dan Kelahiran Identitas Digital Pan-Asia Tenggara',
+    ? 'US and Israeli Attacks on Iran: Future Predictions and Lessons for Indonesia' 
+    : 'Serangan AS dan Israel ke Iran: Prediksi ke Depan dan Pelajaran Untuk Indonesia',
     snippet: lang === 'en' 
-    ? 'On August 30, 2025, a Thai digital activist named Yammi posted a simple message on the X platform: that it turns out the cross-border food delivery feature on the Grab app...' 
-    : 'Pada 30 Agustus 2025, seorang aktivis digital asal Thailand bernama Yammi mengunggah pesan sederhana di platform X: bahwa ternyata fitur pengiriman makanan lintas negara di aplikasi Grab...',
+    ? 'That morning, at 9:27 a.m. Tehran time on February 28, 2026, the skies over Iran turned into hell. The United States and Israel launched the largest joint military attack in the Middle East since...' 
+    : 'Pagi itu, pukul 09.27 waktu Teheran, 28 Februari 2026, langit Iran berubah menjadi neraka. Amerika Serikat dan Israel melancarkan serangan militer gabungan terbesar di Timur Tengah sejak...',
 
     title2: lang === 'en' 
     ? 'The US invasion of Venezuela: How should Indonesia respond?' 
@@ -33,8 +33,8 @@ export default async function LatestArticlesSection() {
     : '"Pop Culture as Protest": Komparasi Gerakan Sosial "One Piece" di Indonesia, Filipina, dan Nepal dalam Reformasi Politik dan Representasi Rakyat',
 
     title6: lang === 'en' 
-    ? 'Political Stability as a Predictor of Economic Growth: A Review of Domestic Crises in Three ASEAN Countries' 
-    : 'Stabilitas Politik sebagai Prediktor Pertumbuhan Ekonomi: Tinjauan Krisis Domestik di Tiga Negara ASEAN',
+    ? 'The SEAblings Phenomenon and the Birth of a Pan-Southeast Asian Digital Identity' 
+    : 'Fenomena SEAblings dan Kelahiran Identitas Digital Pan-Asia Tenggara',
 
     title7: lang === 'en' 
     ? 'Board of Peace Trump: A Trap for Indonesian Leadership in the Global South' 
@@ -43,13 +43,21 @@ export default async function LatestArticlesSection() {
 
   const articles = [
     {
-      href: 'https://www.searcunsoed.com/artikel/politics-ir/fenomena-seablings-dan-kelahiran-identitas-digital-pan-asia-tenggara',
-      imageSrc: '/images/seablings.jpeg',
+      href: 'https://www.searcunsoed.com/artikel/politics-ir/serangan-as-dan-israel-ke-iran-prediksi-ke-depan-dan-pelajaran-untuk-indonesia',
+      imageSrc: '/images/serangan.jpg',
       category: 'Politics and International Relations Research',
       title: t.title1,
       author: 'Arif Darmawan',
-      date: '21 Februari 2026',
+      date: '1 Maret 2026',
       snippet: t.snippet,
+    },
+    {
+      href: 'https://www.searcunsoed.com/artikel/politics-ir/fenomena-seablings-dan-kelahiran-identitas-digital-pan-asia-tenggara',
+      imageSrc: '/images/seablings.jpeg',
+      category: 'Politics and International Relations Research',
+      title: t.title6,
+      author: 'Arif Darmawan',
+      date: '21 Februari 2026',
     },
     {
       href: 'https://www.searcunsoed.com/artikel/politics-ir/board-of-peace-trump-jebakan-bagi-kepemimpinan-indonesia-di-global-south',
@@ -90,14 +98,6 @@ export default async function LatestArticlesSection() {
       title: t.title5,
       author: 'Putu Puspa Widyanti, dan Azkia Sofie Wulandari',
       date: '25 November 2025',
-    },
-    {
-      href: 'https://www.searcunsoed.com/artikel/economic-social/stabilitas-politik-sebagai-prediktor-pertumbuhan-ekonomi-tinjauan-krisis-domestik-di-tiga-negara-asean',
-      imageSrc: '/images/demo.webp',
-      category: 'Economic and Social Walfare',
-      title: t.title6,
-      author: 'Fabian Adam dan Fahreza Adi Prabowo',
-      date: '11 September 2025',
     },
   ];
 

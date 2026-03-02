@@ -4,12 +4,12 @@ import { FaInstagram } from 'react-icons/fa';
 import AnimateOnScroll from './AnimateOnScroll';
 
 const instagramPosts = [
-    { id: 1, src: '/images/press.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 1' },
-    { id: 4, src: '/images/asean.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 4' },
-    { id: 2, src: '/images/sumatera.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 2' },
-    { id: 5, src: '/images/gift1.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 5' },
-    { id: 3, src: '/images/vennas.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 3' },
-    { id: 6, src: '/images/gift2.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 6' },
+    { id: 1, src: '/images/knets.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 1' },
+    { id: 4, src: '/images/congrats.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 4' },
+    { id: 2, src: '/images/imlek.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 2' },
+    { id: 5, src: '/images/press.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 5' },
+    { id: 3, src: '/images/bop2.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 3' },
+    { id: 6, src: '/images/sumatera.webp', width: 1080, height: 1440, alt: 'Postingan Instagram 6' },
 ];
 
 export default function InstagramSection() {
