@@ -20,6 +20,7 @@ export default function Navbar({ lang }: { lang: string }) {
       buku: lang === 'en' ? 'Book Chapter' : 'Book Chapter',
       proceedings: lang=== 'en' ? 'Proceedings' : 'Prosiding',
       journal: lang=== 'en' ? 'SEA Insight Journal' : 'Jurnal SEA Insight',
+      workingpaper: lang=== 'en' ? 'Working Paper' : 'Working Paper',
     artikel: lang === 'en' ? 'Articles' : 'Artikel',
     berita: lang === 'en' ? 'SEA Update' : 'SEA Update',
     aktivitas: lang === 'en' ? 'Our Activities' : 'Aktivitas Kami',
@@ -48,6 +49,7 @@ export default function Navbar({ lang }: { lang: string }) {
           label: t.journal, 
           isExternal: true
         },
+        { href: '/working-paper', label: t.workingpaper },
       ]
     },
     { 

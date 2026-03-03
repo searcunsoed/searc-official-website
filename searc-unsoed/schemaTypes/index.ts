@@ -6,6 +6,7 @@ import news from './news'
 import blockContent from './blockContent'
 import activity from './activity'
 import event from './event'
+import workingPaper from './workingPaper'
 
 export const schemaTypes = [
     bookChapter,
@@ -16,4 +17,5 @@ export const schemaTypes = [
     blockContent,
     activity,
     event,
+    workingPaper
 ]
