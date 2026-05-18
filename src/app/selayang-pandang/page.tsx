@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaBookOpen, FaGlobeAsia, FaBalanceScale, FaPaintBrush, FaSeedling, FaDownload } from 'react-icons/fa';
+import { FaBook, FaUsers, FaLandmark, FaBookReader, FaBalanceScale, FaGlobeAsia, FaSeedling, FaDownload } from 'react-icons/fa';
 import Footer from '../components/Footer';
 import { cookies } from 'next/headers';
 
@@ -10,38 +10,38 @@ export default async function SelayangPandang() {
 
   const t = {
     subtitle: lang === 'en' 
-      ? 'Learn more about our vision, mission, and journey in studying Southeast Asia.' 
-      : 'Mengenal lebih dalam visi, misi, dan perjalanan kami dalam mengkaji Asia Tenggara.',
+      ? 'Learn more about our vision, mission, and journey in International.' 
+      : 'Mengenal lebih dalam visi, misi, dan perjalanan kami dalam kajian Internasional.',
 
     visi: lang === 'en' ? 'Our Vision' : 'Visi Kami',
     p1visi: lang === 'en' 
-      ? 'To become a leading research center and primary reference in strategic policy studies in Southeast Asia based on local wisdom for sustainable development.' 
-      : 'Menjadi pusat riset unggulan dan rujukan utama dalam studi kebijakan strategis kawasan Asia Tenggara yang berlandaskan pada kearifan lokal untuk pembangunan berkelanjutan.',
+      ? 'To become a leading strategic research center in Indonesia for the analysis of security and development policies in the Southeast Asian and Indo-Pacific regions, making tangible contributions to national and international academic discourse.' 
+      : 'Menjadi pusat kajian strategis terkemuka di Indonesia dalam analisis kebijakan keamanan dan pembangunan di kawasan Asia Tenggara dan Indo-Pasifik, dengan kontribusi nyata pada wacana akademik nasional dan internasional.',
 
     fokus: lang === 'en' ? 'Our Research Focus' : 'Fokus Riset Kami',
     p1fokus: lang === 'en' 
       ? 'We turn data into insights, and insights into real policy solutions.'
       : 'Kami mengubah data menjadi wawasan, dan wawasan menjadi solusi kebijakan yang nyata.',
     
-    judulmisi1: lang === 'en' ? 'Transparency & Democracy' : 'Transparansi & Demokrasi',
+    judulmisi1: lang === 'en' ? 'Research Publication' : 'Publikasi Riset',
     description1: lang === 'en' 
-      ? 'Examining transparency, corruption, and the role of civil society in ASEAN from democracy to authoritarianism.' 
-      : 'Mengupas transparansi, korupsi, dan peran masyarakat sipil di ASEAN dari demokrasi hingga otoritarianisme.',
+      ? 'Producing high-quality research on the strategic dynamics of the Southeast Asian and Indo-Pacific regions.' 
+      : 'Menghasilkan riset berkualitas tinggi tentang dinamika strategis kawasan Asia Tenggara dan Indo-Pasifik.',
 
-    judulmisi2: lang === 'en' ? 'Economy & Trade' : 'Ekonomi & Perdagangan',
+    judulmisi2: lang === 'en' ? 'Building Collaborative Networks' : 'Membangun Jejaring Kolaborasi',
     description2: lang === 'en' 
-      ? 'Conducting research on international trade, the digital economy, and inclusive solutions to inequality.' 
-      : 'Melakukan penelitian dari perdagangan internasional, ekonomi digital, hingga solusi inklusif untuk ketidaksetaraan.',
+      ? 'Building a network of research collaborations with partner universities and international research institutions.' 
+      : 'Membangun jejaring kolaborasi penelitian dengan mitra perguruan tinggi dan lembaga kajian internasional.',
     
-    judulmisi3: lang === 'en' ? 'Law & Maritime Affairs' : 'Hukum & Maritim',
+    judulmisi3: lang === 'en' ? 'Formulation of Policy Briefs' : 'Perumusan Rekomendasi Kebijakan',
     description3: lang === 'en' 
-      ? 'Examining the rule of law to maritime conflicts, and how law shapes the future of the region.' 
-      : 'Mengkaji supremasi hukum hingga konflik maritim, dan bagaimana hukum membentuk masa depan kawasan.',
+      ? 'Contribute to policy formulation through academic publications, policy briefs, and public engagement.' 
+      : 'Berkontribusi pada perumusan kebijakan melalui publikasi akademik, policy brief, dan keterlibatan publik.',
 
-    judulmisi4: lang === 'en' ? 'Culture & Identity' : 'Budaya & Identitas',
+    judulmisi4: lang === 'en' ? 'Research Capacity Building' : 'Pengembangan Kapasitas Riset',
     description4: lang === 'en' 
-      ? 'Examining how cultural transformation and dynamic social change shape Southeast Asian identity.' 
-      : 'Mengkaji bagaimana transformasi budaya dan perubahan sosial yang dinamis membentuk identitas Asia Tenggara.',
+      ? 'Supporting the development of research capacity among the UNSOED academic community in the field of international strategic studies.' 
+      : 'Mendukung pengembangan kapasitas riset civitas akademika UNSOED di bidang studi strategis internasional.',
 
     judulfokus1: lang === 'en' ? 'Rural Development' : 'Pembangunan Pedesaan',
     descriptionfokus1: lang === 'en' 
@@ -67,22 +67,22 @@ export default async function SelayangPandang() {
 
   const missionItems = [
     {
-      icon: <FaBookOpen />,
+      icon: <FaBook />,
       title: t.judulmisi1,
       description: t.description1,
     },
     {
-      icon: <FaGlobeAsia />,
+      icon: <FaUsers />,
       title: t.judulmisi2,
       description: t.description2,
     },
     {
-      icon: <FaBalanceScale />,
+      icon: <FaLandmark />,
       title: t.judulmisi3,
       description: t.description3,
     },
     {
-      icon: <FaPaintBrush />,
+      icon: <FaBookReader />,
       title: t.judulmisi4,
       description: t.description4,
     },
@@ -123,7 +123,7 @@ export default async function SelayangPandang() {
           className="object-cover z-0 opacity-50"
         />
         <div className="relative z-10 p-4">
-          <h1 className="text-4xl md:text-6xl font-bold font-sans">SEARC Unsoed</h1>
+          <h1 className="text-4xl md:text-6xl font-bold font-sans">CISS Unsoed</h1>
           <p className="mt-4 max-w-2xl text-lg text-white">
             {t.subtitle}
           </p>

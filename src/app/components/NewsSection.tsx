@@ -42,13 +42,13 @@ export default function NewsSection({ lang }: { lang: string }) {
         <div className="text-center mb-16">
           <AnimateOnScroll animationClassName="animate-slide-in-from-bottom">
             <h2 className="text-base font-semibold text-yellow-600 tracking-wide uppercase">
-              {lang === 'en' ? 'SEA Updates' : 'SEA Updates'}
+              {lang === 'en' ? 'Global Updates' : 'Global Updates'}
             </h2>
             <p className="mt-2 text-3xl font-extrabold font-sans text-yellow-900 sm:text-4xl">
               {
                 lang === 'en' 
-                ? 'The Latest News from SEARC' 
-                : 'Berita Terbaru dari SEARC'
+                ? 'The Latest News from CISS' 
+                : 'Berita Terbaru dari CISS'
               }
             </p>
           </AnimateOnScroll>
@@ -92,8 +92,8 @@ export default function NewsSection({ lang }: { lang: string }) {
             <Link href="/berita" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-b from-yellow-400 to-yellow-600 text-white font-bold rounded-lg shadow-lg shadow-yellow-500/30 transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-yellow-500/50 transform hover:scale-105">
               {
                 lang === 'en' 
-                ? 'See More SEA Updates' 
-                : 'Lihat SEA Update Lainnya'
+                ? 'See More Global Updates' 
+                : 'Lihat Global Update Lainnya'
               }
               <FaArrowRight className="ml-3 -mr-1 h-4 w-4" />
             </Link>

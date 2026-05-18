@@ -6,7 +6,7 @@ import { cookies } from 'next/headers';
 const allResearchers = [
     { 
         name: 'Dr. Arif Darmawan, S.IP, M.Si', 
-        role: 'Head of SEARC Unsoed', 
+        role: 'Head of CISS Unsoed', 
         image: '/images/team/arif-darmawan.webp', 
         links: { 
             linkedin: 'https://id.linkedin.com/in/arif-darmawan-20042656', 
@@ -15,7 +15,7 @@ const allResearchers = [
     },
     { 
         name: 'Ulil Afwa, S.H., M.H.', 
-        role: 'Secretary of SEARC Unsoed', 
+        role: 'Researcher of CISS Unsoed', 
         image: '/images/team/ulil.webp', 
         links: { 
             linkedin: 'https://id.linkedin.com/in/ulil-afwa-3543a3b4', 
@@ -23,17 +23,8 @@ const allResearchers = [
         } 
     },
     { 
-        name: 'Elpeni Fitrah, S.Sos., M.A., Ph.D', 
-        role: 'Editor in Chief Sea Insight Journal SEARC Unsoed', 
-        image: '/images/team/elpeni-fitrah.webp', 
-        links: { 
-            linkedin: 'https://id.linkedin.com/in/elpeni-fitrah-a2657a339', 
-            scholar: 'https://scholar.google.com/citations?hl=en&user=vZKxidEAAAAJ', 
-        } 
-    },
-    { 
         name: 'Kiky Srirejeki, M.Sc (Acc.), B.S (Acc.), Ph.D', 
-        role: 'Researcher of SEARC Unsoed', 
+        role: 'Researcher of CISS Unsoed', 
         image: '/images/team/kiky.webp', 
         links: { 
             linkedin: 'https://au.linkedin.com/in/kikysrirejeki', 
@@ -42,7 +33,7 @@ const allResearchers = [
     },
     { 
         name: 'Hanifa Pascarina, S.S., M.Hum', 
-        role: 'Researcher of SEARC Unsoed', 
+        role: 'Researcher of CISS Unsoed', 
         image: '/images/team/hanifa.webp', 
         links: { 
             linkedin: 'https://id.linkedin.com/in/hanifa-pascarina', 

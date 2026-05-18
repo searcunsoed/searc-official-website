@@ -95,14 +95,14 @@ export default function Footer({ lang }: { lang: string }) {
           </div>
           <div className="my-8">
             <Image 
-              src="/images/logo-unsoed.png"
+              src="/images/logo-footer.png"
               alt="Logo Universitas"
               width={275}
               height={125}
               className="h-auto"
             />
           </div>
-          <p className="text-sm text-white">Copyright © {new Date().getFullYear()} - Southeast Asia Strategic Policies Research Center</p>
+          <p className="text-sm text-white">Copyright © {new Date().getFullYear()} - Center for International Strategic Studies</p>
         </div>
       </div>
     </footer>

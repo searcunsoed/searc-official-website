@@ -21,11 +21,11 @@ export default async function HeroImage() {
         <div className="max-w-4xl px-4">
           <AnimateOnScroll animationClassName="animate-slide-in-from-bottom">
             <h1 className="font-extrabold text-5xl md:text-7xl font-sans text-white drop-shadow-lg">
-              {lang === 'en' ? 'Southeast Asian' : 'Pusat Riset'}
+              {lang === 'en' ? 'Center for' : 'Pusat'}
               <br />
-              {lang === 'en' ? 'Strategic Policies' : 'Kebijakan Strategis'}
+              {lang === 'en' ? 'International' : 'Kajian Strategis'}
               <br />
-              {lang === 'en' ? 'Research Center' : 'Asia Tenggara'}
+              {lang === 'en' ? 'Strategic Studies' : 'Internasional'}
             </h1>
             <p className="mt-6 text-xg md:text-2xl text-white drop-shadow-md">
               {lang === 'en' ? 'Jenderal Soedirman University' : 'Universitas Jenderal Soedirman'}

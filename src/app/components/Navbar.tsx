@@ -21,8 +21,9 @@ export default function Navbar({ lang }: { lang: string }) {
       proceedings: lang=== 'en' ? 'Proceedings' : 'Prosiding',
       journal: lang=== 'en' ? 'SEA Insight Journal' : 'Jurnal SEA Insight',
       workingpaper: lang=== 'en' ? 'Working Paper' : 'Working Paper',
+      journalarticle: lang=== 'en' ? 'Article Journal' : 'Artikel Jurnal',
     artikel: lang === 'en' ? 'Articles' : 'Artikel',
-    berita: lang === 'en' ? 'SEA Update' : 'SEA Update',
+    berita: lang === 'en' ? 'Global Update' : 'Global Update',
     aktivitas: lang === 'en' ? 'Our Activities' : 'Aktivitas Kami',
     tulis: lang === 'en' ? 'Write for Us' : 'Write for Us',
   };
@@ -50,6 +51,7 @@ export default function Navbar({ lang }: { lang: string }) {
           isExternal: true
         },
         { href: '/working-paper', label: t.workingpaper },
+        { href: '/jurnal', label: t.journalarticle },
       ]
     },
     { 

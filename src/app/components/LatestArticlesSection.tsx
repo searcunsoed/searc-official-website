@@ -115,8 +115,8 @@ export default async function LatestArticlesSection() {
             <p className="mt-2 text-3xl font-extrabold font-sans text-yellow-900 sm:text-4xl">
               {
                 lang === 'en' 
-                ? 'Latest Articles from SEARC' 
-                : 'Artikel Terbaru dari SEARC'
+                ? 'Latest Articles from CISS' 
+                : 'Artikel Terbaru dari CISS'
               }
             </p>
           </AnimateOnScroll>
