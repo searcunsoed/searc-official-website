@@ -40,6 +40,24 @@ const allResearchers = [
             scholar: 'https://scholar.google.com/citations?user=fXMFuIQAAAAJ&hl=id', 
         } 
     },
+    { 
+        name: 'Bimo F. Hantoro, S.H., LL.M.', 
+        role: 'Researcher of CISS Unsoed', 
+        image: '/images/team/bimo.webp', 
+        links: { 
+            linkedin: 'https://www.linkedin.com/in/bimofh', 
+            scholar: 'https://scholar.google.com/citations?user=rERGYvkAAAAJ&hl=en', 
+        } 
+    },
+    { 
+        name: 'Wasis Singgih Sasono', 
+        role: 'Researcher of CISS Unsoed', 
+        image: '/images/team/wasis.webp', 
+        links: { 
+            linkedin: 'https://id.linkedin.com/in/wasis-sasono-668838367', 
+            scholar: 'https://scholar.google.com/citations?user=K24Vkt8AAAAJ&hl=id', 
+        } 
+    },
 ];
 
 export default async function PenelitiPage() {
