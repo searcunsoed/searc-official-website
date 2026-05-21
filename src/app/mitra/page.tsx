@@ -63,8 +63,8 @@ export default async function MitraPage() {
                     <p className="mt-4 text-lg text-white">
                         {
                             lang === 'en' 
-                            ? 'Collaboration is the key to the success of our research. Here are the strategic partners who have collaborated with SEARC Unsoed.' 
-                            : 'Kolaborasi adalah kunci keberhasilan riset kami. Berikut adalah mitra-mitra strategis yang telah bekerja sama dengan SEARC Unsoed.'
+                            ? 'Collaboration is the key to the success of our research. Here are the strategic partners who have collaborated with CISS Unsoed.' 
+                            : 'Kolaborasi adalah kunci keberhasilan riset kami. Berikut adalah mitra-mitra strategis yang telah bekerja sama dengan CISS Unsoed.'
                         }
                     </p>
                 </div>

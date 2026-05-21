@@ -28,7 +28,7 @@ export default async function BeritaPage() {
                 <div className="relative z-10 p-4">
                     <h1 className="text-4xl md:text-6xl font-extrabold font-sans">Global Update</h1>
                     <p className="mt-4 text-lg text-white">
-                        Ikuti perkembangan, kegiatan, dan rilis terbaru dari SEARC Unsoed.
+                        Ikuti perkembangan, kegiatan, dan rilis terbaru dari CISS Unsoed.
                     </p>
                 </div>
             </section>

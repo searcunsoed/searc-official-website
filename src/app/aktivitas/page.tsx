@@ -25,7 +25,8 @@ export default async function ActivitiesPage() {
     const activities: Activity[] = await getActivities();
     const categoriesToCheck = [
         'Diseminasi Riset dan Seminar', 
-        'Pengabdian Masyarakat', 
+        'Pengabdian Masyarakat',
+        'Riset dan Publikasi', 
         'Podcast'
     ];
 

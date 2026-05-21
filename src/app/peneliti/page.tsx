@@ -69,7 +69,7 @@ export default async function PenelitiPage() {
             <section className="relative h-[50vh] bg-yellow-500 text-white flex items-center justify-center text-center">
                 <Image 
                     src="/images/unsoed-2.webp"
-                    alt="Tentang SEARC"
+                    alt="Tentang CISS"
                     fill
                     className="object-cover z-0 opacity-50"
                 />
@@ -77,15 +77,15 @@ export default async function PenelitiPage() {
                     <h1 className="max-w-6xl text-4xl md:text-6xl font-bold font-sans">
                         {
                             lang === 'en' 
-                            ? 'Profile of the SEARC Unsoed Research Team' 
-                            : 'Profil Tim Peneliti SEARC Unsoed'
+                            ? 'Profile of the CISS Unsoed Research Team' 
+                            : 'Profil Tim Peneliti CISS Unsoed'
                         }
                     </h1>
                     <p className="mt-4 text-lg text-white">
                         {
                             lang === 'en' 
-                            ? 'Meet our experts who are dedicated to examining strategic issues in Southeast Asia' 
-                            : 'Temui para ahli kami yang berdedikasi dalam mengkaji isu-isu strategis di Asia Tenggara'
+                            ? 'Meet our experts who are dedicated to examining International strategic issues' 
+                            : 'Temui para ahli kami yang berdedikasi dalam mengkaji isu-isu strategis Internasional'
                         }
                     </p>
                 </div>

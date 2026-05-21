@@ -29,7 +29,7 @@ export default async function ProceedingsPage() {
                 <div className="relative z-10 p-4">
                     <h1 className="text-4xl md:text-6xl font-extrabold font-sans">Proceedings</h1>
                     <p className="mt-4 text-lg text-white">
-                        Arsip dokumen dan hasil diskusi dari berbagai konferensi dan seminar yang diselenggarakan atau diikuti oleh SEARC.
+                        Arsip dokumen dan hasil diskusi dari berbagai konferensi dan seminar yang diselenggarakan atau diikuti oleh CISS.
                     </p>
                 </div>
             </section>

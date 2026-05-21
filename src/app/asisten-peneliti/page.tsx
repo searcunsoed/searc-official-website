@@ -56,7 +56,7 @@ export default async function AsistenPenelitiPage() {
         <section className="relative h-[50vh] bg-yellow-500 text-white flex items-center justify-center text-center">
             <Image 
                 src="/images/unsoed-2.webp"
-                alt="Tentang SEARC"
+                alt="Tentang CISS"
                 fill
                 className="object-cover z-0 opacity-50"
             />
@@ -64,15 +64,15 @@ export default async function AsistenPenelitiPage() {
                 <h1 className="max-w-6xl text-4xl md:text-6xl font-bold font-sans">
                   {
                     lang === 'en' 
-                    ? 'Profile of the SEARC Unsoed Research Assistants' 
-                    : 'Profil Asisten Peneliti SEARC Unsoed'
+                    ? 'Profile of the CISS Unsoed Research Assistants' 
+                    : 'Profil Asisten Peneliti CISS Unsoed'
                   }
                 </h1>
                 <p className="mt-4 text-lg text-white">
                   {
                     lang === 'en' 
-                    ? 'Our dedicated team of research assistants supports SEARC Unsoed research and operational activities.' 
-                    : 'Tim asisten peneliti kami yang berdedikasi mendukung kegiatan riset dan operasional SEARC Unsoed.'
+                    ? 'Our dedicated team of research assistants supports CISS Unsoed research and operational activities.' 
+                    : 'Tim asisten peneliti kami yang berdedikasi mendukung kegiatan riset dan operasional CISS Unsoed.'
                   }
                 </p>
             </div>
