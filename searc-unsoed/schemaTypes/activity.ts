@@ -28,6 +28,7 @@ export default defineType({
                 list: [
                     {title: 'Diseminasi Riset dan Seminar', value: 'Diseminasi Riset dan Seminar'},
                     {title: 'Pengabdian Masyarakat', value: 'Pengabdian Masyarakat'},
+                    {title: 'Riset dan Publikasi', value: 'Riset dan Publikasi'},
                     {title: 'Podcast', value: 'Podcast'}
                 ],
                 layout: 'radio'

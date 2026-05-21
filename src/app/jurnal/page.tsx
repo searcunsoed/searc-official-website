@@ -24,8 +24,8 @@ export default async function JurnalListPage() {
     const t = {
             title: lang === 'en' ? 'Journal Articles' : 'Artikel Jurnal',
             subtitle: lang === 'en' 
-                ? 'Collection of scientific publications by SEARC Unsoed researchers' 
-                : 'Collection of scientific publications by SEARC Unsoed researchers',
+                ? 'Collection of scientific publications by CISS Unsoed researchers' 
+                : 'Collection of scientific publications by CISS Unsoed researchers',
             readMore: lang === 'en' ? 'Read & Download' : 'Baca & Unduh',
             noData: lang === 'en' ? 'No working papers available yet.' : 'Belum ada working paper.',
             by: lang === 'en' ? 'By' : 'Oleh',

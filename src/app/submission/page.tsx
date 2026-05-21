@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import { cookies } from 'next/headers';
 
 const SUBMISSION_EMAIL = "lppmunsoed58@gmail.com";
-const EMAIL_SUBJECT = "Submission Artikel untuk SEARC Unsoed";
+const EMAIL_SUBJECT = "Submission Artikel untuk CISS Unsoed";
 
 const guidelines = [
   { icon: <FaFileWord />, title: "Format", text: "Naskah dalam format Microsoft Word (.doc atau .docx)." },
@@ -42,9 +42,9 @@ export default async function WriteForUsPage() {
                     className="object-cover z-0 opacity-50"
                 />
                 <div className="relative z-10 p-4">
-                    <h1 className="text-4xl md:text-6xl font-extrabold font-sans">Tulis untuk SEARC Unsoed</h1>
+                    <h1 className="text-4xl md:text-6xl font-extrabold font-sans">Tulis untuk CISS Unsoed</h1>
                     <p className="mt-4 text-lg text-white">
-                        Bagikan wawasan, analisis, dan hasil riset Anda tentang Asia Tenggara kepada audiens kami.
+                        Bagikan wawasan, analisis, dan hasil riset Anda tentang isu-isu Internasional kepada audiens kami.
                     </p>
                 </div>
             </section>
@@ -53,7 +53,7 @@ export default async function WriteForUsPage() {
                     <FaQuestionCircle className="mx-auto h-12 w-12 text-yellow-700 mb-4" />
                     <h2 className="text-3xl font-bold font-sans text-yellow-700">Mengapa Berkontribusi?</h2>
                     <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-                        SEARC Unsoed mengundang para akademisi, peneliti, mahasiswa, dan praktisi untuk menyumbangkan tulisan orisinal. Ini adalah kesempatan emas untuk menyebarluaskan gagasan, berkontribusi pada diskursus kebijakan, dan menjangkau audiens yang lebih luas.
+                        CISS Unsoed mengundang para akademisi, peneliti, mahasiswa, dan praktisi untuk menyumbangkan tulisan orisinal. Ini adalah kesempatan emas untuk menyebarluaskan gagasan, berkontribusi pada diskursus kebijakan, dan menjangkau audiens yang lebih luas.
                     </p>
                 </div>
             </section>
